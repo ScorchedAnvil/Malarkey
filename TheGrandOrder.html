@@ -36,14 +36,15 @@ if (w ==="Cuba"){
 function StartDA(){
 	var database=firebase.database();
 	database.ref("comments").on("value", showcomments);
-var audio = new Audio('Battle_Lines.mp3');
-audio.play();
+
 }
 }
 
 else{
 	alert("INCORRECT")
 	window.location = "deathpage.html"
+	var audio = new Audio('Battle_Lines.mp3');
+audio.play();
 }
 	
 	function Button_clicked(){
@@ -135,7 +136,7 @@ window.onload = StartDA;
 				<li><a href="https://en.wikipedia.org/wiki/Turkey_(bird)">Turkeys</a>	
 			</ul>
 </p> </div>
-			<img style="width:30%; display: inline-block;" src="Duck_imgs\Duck_img.jpg">
+			<img style="width:30%; display: inline-block;" src="https://danielmiessler.com/images/cupoftea1.png">
 		</div>
 				<div id = "ALLY">
 			
