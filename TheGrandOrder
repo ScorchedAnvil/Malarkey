@@ -1,0 +1,167 @@
+<html>
+
+<head>
+	
+	
+	
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js">
+</script>
+	<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBELocOV3nri3-uFr6quw07ec95ye0R9GU",
+    authDomain: "duck-army.firebaseapp.com",
+    databaseURL: "https://duck-army.firebaseio.com",
+    projectId: "duck-army",
+    storageBucket: "duck-army.appspot.com",
+    messagingSenderId: "489821502160"
+  };
+  firebase.initializeApp(config);
+</script>
+	
+		
+	
+<script>
+	
+var w = window.prompt ("Where is it always morning?");
+console.log(w);
+function showcomments (snapshot){ 
+	console.log (snapshot.val())
+	var commentbox = document.getElementById("Comments");
+	commentbox.innerHTML = snapshot.val().comment;
+}
+if (w ==="Cuba"){
+  alert (" Correct! I hope you are all doing well, for indeed it is a fine day. The sun is shining, the air is crisp, and overall, today is a wonderful day. There is much to do and discuss, for human lives are short. Make the most of today before tomorrow comes. However, apparently you can never be in tomorrow. It is always a just out of reach. Eluding the grasp of man kind. Thus, you should make the most of every day!");
+ 
+function StartDA(){
+	var database=firebase.database();
+	database.ref("comments").on("value", showcomments);
+var audio = new Audio('Battle_Lines.mp3');
+audio.play();
+}
+}
+
+else{
+	alert("INCORRECT")
+	window.location = "deathpage.html"
+}
+	
+	function Button_clicked(){
+	
+		document.getElementById("Comment");
+		var textbox = document.getElementById("Comment");
+		var commentbox = document.getElementById("Comments");
+		var newcomment = "<div style='border-style:solid;margin:5px'><pre style='color:white; font-family:Times New Roman'>"+textbox.value+"</pre></div>"
+		commentbox.innerHTML = commentbox.innerHTML+newcomment;
+		var database = firebase.database();
+		database.ref("comments").set ({comment:commentbox.innerHTML});
+		
+		textbox.value = "";
+		return false;
+	
+	}
+	function clear_evidence(){
+	
+		
+		var database = firebase.database();
+		database.ref("comments").set ({comment:""});
+		
+		textbox.value = "";
+		return false;
+	
+	}
+function Duck_Growing(N){
+   var final_size = 33.3;
+   return final_size /(6-N);
+}
+window.onload = StartDA;
+</script>
+	
+	
+<style>
+	#QUACK{ 
+				font-size:200%;
+				color:white;
+				text-align:center;
+				text-decoration: underline;
+	}
+		
+		
+	#SQUACK{		font-size:150%
+				color:white;
+				text-align:center;
+				text-decoration: bold;
+	}
+	
+	#BEAK{
+				text-align:center;}
+       .top_objects_debug{
+				float:left;
+				display:inline;
+				width:33.3%;
+	}
+	#WEBBED{		text-align:center;
+				color:white;
+				font-size:100%;
+	}
+	#HEADER{
+					text-align:center;
+	}
+		
+				body{ background:purple;
+	}
+	#img-container{
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+	
+		<div id="img-container">
+			<img style="width:30%; display: inline-block;"  src="https://danielmiessler.com/images/cupoftea1.png">
+			<div style="width:30%; color:white; display: inline-block;">
+ <p style ="text-decoration: bold; font-size: 150%; text-decoration: underline;" >THE ORDER OF THE SCORCHED ANVIL OF MALARKEY</p>
+<p>Useful Links:
+			<ul>
+				<li><a href="https://en.wikipedia.org/wiki/Armadillo">Armadillos</a>
+				<li><a href="https://en.wikipedia.org/wiki/Cuttlefish">Cuttlefish</a>
+				<li><a href="https://en.wikipedia.org/wiki/Goose">Geese</a>
+				<li><a href="https://en.wikipedia.org/wiki/Jellyfish">Jellyfish</a>
+				<li><a href="https://en.wikipedia.org/wiki/Pangolin">Pangolins</a>
+				<li><a href="https://en.wikipedia.org/wiki/Platypus">Platypus</a>
+				<li><a href="https://en.wikipedia.org/wiki/Raccoon">Raccoons</a>
+				<li><a href="https://en.wikipedia.org/wiki/Shrimp">Shrimp</a>
+				<li><a href="https://en.wikipedia.org/wiki/Snake">Snakes</a>
+				<li><a href="https://en.wikipedia.org/wiki/Turkey_(bird)">Turkeys</a>	
+			</ul>
+</p> </div>
+			<img style="width:30%; display: inline-block;" src="Duck_imgs\Duck_img.jpg">
+		</div>
+				<div id = "ALLY">
+			
+		
+			</p>
+		</div>
+
+	<div id = "HEADER">
+		
+		
+		
+		
+	</div>
+<div id="WEBBED">
+<p> "Join in The Order of the Scorched Anvil of Malarkey. By our words the world will be enflamed, and our hands shall be those that sift through the ashes to forge it anew." -- Lord of Malarkey</p>
+</div>
+	<div id = Comments>
+		
+	</div>
+<form>
+	
+<textarea rows="4" id = "Comment" style = "width:100%">
+</textarea>
+	<button onclick ="return Button_clicked();">
+		Submit
+	</button>
+</form>
+</body>
+</html>
